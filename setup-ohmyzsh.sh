@@ -1,13 +1,16 @@
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" 
+#!/usr/bin/env bash
 
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-brew install autojump
+git clone git://github.com/wting/autojump.git
+cd autojump
+./install.py
+cd ..
+rm -rf autojump
 
 mkdir -p ~/.dotfiles
-cp ./.zshrc ~/.zshrc
-cp ./.p10k.zsh ~/.p10k.zsh
-cp ./.dotfiles/aliases ~/.dotfiles/aliases
+cp ./files/zshrc ~/.zshrc
+cp ./files/p10k.zsh ~/.p10k.zsh
+cp ./files/dotfiles/aliases ~/.dotfiles/aliases
