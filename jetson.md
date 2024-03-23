@@ -10,4 +10,6 @@ sudo apt-get install -y zsh make build-essential libssl-dev zlib1g-dev libbz2-de
 ```sh
 ./install-pyenv-by-apt.sh
 ```
-
+```sh
+./setup-ssh.sh
+```

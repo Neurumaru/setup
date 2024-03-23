@@ -13,4 +13,6 @@ sudo apt-get install curl git mercurial make binutils bison gcc build-essential
 ```sh
 ./install-pyenv-by-brew.sh
 ```
-
+```sh
+./setup-ssh.sh
+```
